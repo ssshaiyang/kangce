@@ -1,0 +1,55 @@
+#app-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.app-wrapper-hide {
+  display: none;
+}
+#system-loading {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  transition: all 1s;
+}
+#system-loading.system-loading--show {
+  display: block;
+  opacity: 1;
+}
+.system-loading--show::after, .system-loading--show::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100px;
+  border: 3px solid #409EFF;
+  opacity: 1;
+  animation: loading 1s infinite;
+}
+.system-loading--show::after {
+  height: 100px;
+  width: 100px;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  border-width: 0 6px 0 0;
+}
+.system-loading--show::before {
+  height: 60px;
+  width: 60px;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border-width: 0 0 0 6px;
+}
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
